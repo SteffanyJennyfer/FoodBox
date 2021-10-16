@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodBox</title>
+
+    <style>
+      body {
+        background: lightgray;
+        font-family: "Roboto";
+      }
+      .topo {
+        background: red;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+      }
+      h1 {
+        margin: 0;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+      h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      img {
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+      p {
+        margin: 15px 0 0 0;
+      }
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .botao {
+        background: #0b940b;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+
+    <h3>Primeiro, seu prato</h3>
+    <div id="Frango" class="produto" onclick="escolherFrango()">
+      <img
+        src="https://img.elo7.com.br/product/original/22565B3/adesivo-parede-prato-comida-frango-salada-restaurante-lindo-adesivo-parede.jpg"
+      />
+      <h4>Frango Yin-Yang</h4>
+      <p>Um pouco de batata, um pouco de salada</p>
+      <p class="preco">R$ 19,90</p>
+    </div>
+    <div id="Carne" class="produto" onclick="escolherCarne()">
+      <img
+        src="https://www.receitas-sem-fronteiras.com/uploads/recipe/receita-carne-de-panela-com-mandioca-e-linguica_crop.jpg?1496879355"
+      />
+      <h4>Carne de panela</h4>
+      <p>Um pouco de batata, um pouco de arroz</p>
+      <p class="preco">R$ 24,90</p>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+    <div id="Coca" class="produto" onclick="escolherCoca()">
+      <img
+        src="https://m.extra.globo.com/incoming/23100391-f77-898/w640h360-PROP/42527721_1336266399843780_6728345566612291584_n.png"
+      />
+      <h4>Coca-cola</h4>
+      <p>Normal, zero ou stevia</p>
+      <p class="preco">R$ 4,99</p>
+    </div>
+    <div id="Suco" class="produto" onclick="escolherSuco()">
+      <img
+        src="https://http2.mlstatic.com/D_NQ_NP_609770-MLB31093067553_062019-O.jpg"
+      />
+      <h4>Suco natural</h4>
+      <p>Suco de vários sabores</p>
+      <p class="preco">R$ 4,90</p>
+    </div>
+
+    <h3>Por fim, sua sobremesa</h3>
+    <div id="Pudim" class="produto" onclick="escolherPudim()">
+      <img
+        src="https://d1uz88p17r663j.cloudfront.net/resized/5e8088611ce8f8b0ff8007950b027cc1_pudim-de-leite-moca-receitas-nestle_1200_600.jpg"
+      />
+      <h4>Pudim</h4>
+      <p>Pudim com calda</p>
+      <p class="preco">R$ 4,99</p>
+    </div>
+    <div id="Gelado" class="produto" onclick="escolherGelado()">
+      <img
+        src="https://www.asaacai.com.br/arquivos/blog/7/sorvete-ou-acai.jpeg"
+      />
+      <h4>Sorvete ou açaí</h4>
+      <p>Sorvete 5 bolinhas e açaí 300ml</p>
+      <p class="preco">R$ 7,99</p>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">
+      Finalizar pedido
+    </div>
+
+    <script>
+      let prato;
+      let bebida;
+      let sobremesa;
+
+      function escolherFrango() {
+        document.getElementById("Frango").style.borderColor = "green";
+        document.getElementById("Carne").style.borderColor = "white";
+        prato = "Frango";
+      }
+      function escolherCarne() {
+        document.getElementById("Carne").style.borderColor = "green";
+        document.getElementById("Frango").style.borderColor = "white";
+        prato = "Carne";
+      }
+      function escolherCoca() {
+        document.getElementById("Coca").style.borderColor = "green";
+        document.getElementById("Suco").style.borderColor = "white";
+        bebida = "Coca";
+      }
+      function escolherSuco() {
+        document.getElementById("Suco").style.borderColor = "green";
+        document.getElementById("Coca").style.borderColor = "white";
+        bebida = "Suco";
+      }
+      function escolherPudim() {
+        document.getElementById("Pudim").style.borderColor = "green";
+        document.getElementById("Gelado").style.borderColor = "white";
+        sobremesa = "Pudim";
+      }
+      function escolherGelado() {
+        document.getElementById("Gelado").style.borderColor = "green";
+        document.getElementById("Pudim").style.borderColor = "white";
+        sobremesa = "Gelado";
+      }
+      function finalizarPedido() {
+        let mensagem;
+        mensagem =
+          "Olá, gostaria de pedir um combo: " +
+          prato +
+          ", " +
+          bebida +
+          " e " +
+          sobremesa;
+
+        window.open("https://wa.me/+5584987524800?text=" + mensagem);
+      }
+    </script>
+  </body>
+</html>
